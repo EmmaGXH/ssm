@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.emma.ssm.dao.PcaAreasMapper" >
+  <resultMap id="BaseResultMap" type="com.emma.ssm.entity.PcaAreas" >
+    <id column="area_id" property="area_id" jdbcType="VARCHAR" />
+    <result column="area_name" property="area_name" jdbcType="VARCHAR" />
+    <result column="city_id" property="city_id" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    area_id, area_name, city_id
+  </sql>
+  
+  <select id="selectByCityId" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from pca_areas
+    where city_id = #{city_id}
+  </select>
+ 
+</mapper>
