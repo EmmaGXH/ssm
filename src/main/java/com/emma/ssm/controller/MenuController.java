@@ -25,5 +25,10 @@ public class MenuController {
 	public String toList() {
 		return "layuicrud/list";
 	}
+	
+	@RequestMapping("test")
+	public String test() {
+		return "gitTest";
+	}
 
 }
